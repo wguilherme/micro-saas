@@ -1,9 +1,12 @@
 import app from './app'
 import database from './database'
 
-// only dev
-// delete and recreate all tables and data in DB
+// force: true only dev
+// force: true delete and recreate all tables and data in DB
 // database.sync({force: true})
+database.sync()
+
+
 
 console.log('Database running at 3306')
 
