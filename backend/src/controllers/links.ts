@@ -2,9 +2,6 @@ import {Request, Response} from 'express';
 import {Link} from '../models/link'
 import linksRepository from '../models/linksRepository'
 
-
-
-
 function generateCode(){
    let text = ''
    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -20,12 +17,12 @@ async function postLink(req: Request, res: Response){
 
    link.code = generateCode()
    link.hits = 0
+
    const result = await linksRepository.add(link)
-   
+
    if(!result.id) return res.sendStatus(400)
 
    link.id = result.id!;
-
    
    res.status(201).json(link)
 }

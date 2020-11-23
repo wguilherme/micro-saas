@@ -7,7 +7,6 @@ interface ILinkCreationAttributes extends Optional<Link, "id">{}
 
 export interface ILinkModel extends Model<Link, ILinkCreationAttributes>, Link {}
 
-
 // define follows rules from ILinkModel
 const LinkModel = database.define<ILinkModel>('link', {
    id: {
