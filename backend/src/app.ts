@@ -1,11 +1,13 @@
-import express from 'express';
+import express from 'express'
 import linksRouter from './routes/links'
+import cors from 'cors'
 
-const app = express();
+const app = express()
 
 // use json
-app.use(express.json());
-app.use(linksRouter);
+app.use(express.json())
+app.use(cors())
+app.use(linksRouter)
 
 //routes
-export default app;
+export default app
