@@ -1,4 +1,7 @@
 import React from 'react'
+import {Container} from 'react-bootstrap'
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Home extends React.Component {
    constructor(props){
@@ -7,7 +10,11 @@ class Home extends React.Component {
 
    render(){
       return (
-         <p>Pitu</p>
+         <Container>
+
+      <FontAwesomeIcon icon="check-square"/>URL Shortner
+
+         </Container>
       )
    }
 }
