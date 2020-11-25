@@ -1,8 +1,17 @@
 import React from 'react';
+import {Logo, HeaderContainer} from './styles'
+import Icone from '../../assets/logo.png'
 
-function Header(){
+function Header(props){
    return(
-      <p>Header</p>
+      <>
+<HeaderContainer>
+      <Logo src={Icone} alt="Shortify - Encurtador de URL" />
+      {/* <h1>Shortify</h1> */}
+      <p>{props.children}</p>
+
+</HeaderContainer>
+      </>
    )
 }
 

@@ -14,7 +14,7 @@ class Home extends React.Component {
       return (
          <Container>
 
-            <Header/>
+         <Header>Seu novo encurtador de URL. :)</Header>
 
       <FontAwesomeIcon icon="check-square"/>URL Shortner
 
