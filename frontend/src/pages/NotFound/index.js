@@ -1,15 +1,15 @@
 import React from 'react'
 
-class Home extends React.Component {
+class NotFound extends React.Component {
    constructor(props){
       super(props);
    }
 
    render(){
       return (
-         <p>Pitu</p>
+         <p>Página não encontrada</p>
       )
    }
 }
 
-export default Home;
+export default NotFound;
