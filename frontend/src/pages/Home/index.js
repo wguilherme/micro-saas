@@ -1,6 +1,8 @@
 import React from 'react'
 import {Container} from 'react-bootstrap'
 
+import Header from '../../components/Header'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Home extends React.Component {
@@ -11,6 +13,8 @@ class Home extends React.Component {
    render(){
       return (
          <Container>
+
+            <Header/>
 
       <FontAwesomeIcon icon="check-square"/>URL Shortner
 
