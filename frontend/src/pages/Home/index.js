@@ -1,9 +1,7 @@
 import React from 'react'
-import {Container} from 'react-bootstrap'
-
 import Header from '../../components/Header'
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Container, InputGroup, FormControler, Button, Alert} from 'react-bootstrap'
+import  {ContentContainer, Form} from './styles'
 
 class Home extends React.Component {
    constructor(props){
@@ -15,9 +13,10 @@ class Home extends React.Component {
          <Container>
 
          <Header>Seu novo encurtador de URL. :)</Header>
+         <ContentContainer>
 
-      <FontAwesomeIcon icon="check-square"/>URL Shortner
 
+         </ContentContainer>
          </Container>
       )
    }
