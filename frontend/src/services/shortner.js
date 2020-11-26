@@ -17,7 +17,10 @@ class Shortner {
    }
 
    async generate(model){
+      console.log('chamou')
       const result = await this.api.post('links', model)
+
+      return result.data;
    }
 }
 

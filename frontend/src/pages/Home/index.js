@@ -21,13 +21,20 @@ handlerSubmit = async(event) => {
 
    const {url} = this.setState
 
+   console.log(url)
+
+   // console.log(url)
+
    this.setState({isLoading: true, errorMessage: ''})
+
    if(!url){
       this.setState({isLoading:false, errorMessage:'Informe uma URL para encurtar.'})
    } else {
       try {
       const service = new Shortner()
       const result = await service.generate({url})
+
+
       this.setState({isLoading: false, code: result.code})
 
 
@@ -46,28 +53,32 @@ copyToClipboard = () => {
 }
 
    render(){
-
-      const {isLoading, errorMessage, code} = this.state;
+      const {isLoading, errorMessage, code, url} = this.state;
 
       return (
          <Container>
             <Header>Seu novo encurtador de URL. :)</Header>
             <ContentContainer>
                <Form onSubmit={this.handlerSubmit}>
-                  <InputGroup>
-                  <FormControl
-                  placeholder="Digite a url para encurtar"
-                  defaultValue=""
-                  onChange={e=>this.setState({url: e.target.value})}
-                  /> 
-                  <InputGroup.Append>  
-                     <Button variant="primary" type="submit">Encurtar</Button>
-                  </InputGroup.Append> 
+                  <InputGroup className="mb-3">
+
+                     <FormControl
+                     placeholder="Digite a url para encurtar"
+                     defaultValue=""
+                     onChange={e => this.setState({url: e.target.value}, console.log(url))}
+                     />  
+
+                     <InputGroup.Append>  
+                        <Button variant="primary" type="submit">Encurtar</Button>
+                     </InputGroup.Append> 
                   </InputGroup>
-                  {isLoading ? (<Spinner animation="border"/>) : (
+
+                  {isLoading ? (
+                     <Spinner animation="border"/>
+                  ) : (
                      code && (
                         <>
-                        <InputGroup>
+                     <InputGroup>
                         <FormControl
                         autofocus={true}
                         defaultValue={`https://shortify.la/${code}`}
@@ -81,6 +92,8 @@ copyToClipboard = () => {
                         </>
                      )
                   )}
+
+                  {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
                </Form>
             </ContentContainer>
          </Container>
