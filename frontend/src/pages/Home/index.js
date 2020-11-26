@@ -19,7 +19,7 @@ class Home extends React.Component {
 handlerSubmit = async(event) => {
    event.preventDefault()
 
-   const {url} = this.setState
+   const url = this.state.url;
 
    console.log(url)
 
